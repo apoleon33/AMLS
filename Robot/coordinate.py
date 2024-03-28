@@ -18,3 +18,6 @@ class Coordinate():
     @Y.setter
     def Y(self, value: int):
         self._y = value
+
+    def __str__(self) -> str:
+        return f'({self._x}, {self._y})'

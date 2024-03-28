@@ -17,3 +17,6 @@ class Api():
 
     def receive(self, subdomain: str) -> str:
         pass
+
+    def __str__(self) -> str:
+        return self.__url
