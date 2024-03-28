@@ -12,7 +12,7 @@ class Api():
     def Url(self, url: str):
         self.__url = url
 
-    def send(self, subdomain: str, data: Any):
+    def send(self, subdomain: str, data):
         pass
 
     def receive(self, subdomain: str) -> str:
