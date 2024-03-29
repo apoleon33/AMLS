@@ -23,4 +23,13 @@ class Screen():
             self.clock.tick(60)
 
     def draw(self, coordinates : Coordinate  ):
+        touches = pygame.key.get_pressed()
+        if touches[pygame.K_d]:
+            coordinates.X += 1
+        elif touches[pygame.K_a]:
+            coordinates.X -= 1
+        if touches[pygame.K_w]:
+            coordinates.Y -= 1
+        elif touches[pygame.K_s]:
+            coordinates.Y += 1
         pygame.draw.rect(self.screen, Tile.ROBOT.value, pygame.Rect(coordinates.X, coordinates.Y, 10, 10))
