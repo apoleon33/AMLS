@@ -4,7 +4,7 @@ class Coordinate():
         self._y = y
 
     @property
-    def X(self) -> int
+    def X(self) -> int:
         return self._x
 
     @X.setter

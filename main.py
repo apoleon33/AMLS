@@ -8,6 +8,8 @@ from Display.tile import Tile
 screen1 = Screen(800, 600, "Robot Cartographer")
 robotTest = Robot(500, 200, Api("http://192.168.4.1"))
 
+robotTest.updateCoordinate()
+
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

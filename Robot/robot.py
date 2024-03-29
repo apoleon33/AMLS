@@ -2,7 +2,7 @@ from Robot.api import Api
 from Robot.coordinate import Coordinate
 
 
-class Robot():
+class Robot:
     __coordinates: Coordinate
     __api: Api
 
@@ -11,7 +11,8 @@ class Robot():
         self.__api = api
 
     def getCoordinate(self) -> Coordinate:
+
         return self.__coordinates
 
     def updateCoordinate(self):
-        pass
+        print(self.__api.receive("")['y'])
