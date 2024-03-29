@@ -1,11 +1,12 @@
 import pygame
 
+from Robot.api import Api
 from Robot.robot import Robot
 from Display.screen import Screen
 from Display.tile import Tile
 
 screen1 = Screen(800, 600, "Robot Cartographer")
-robotTest = Robot(500, 200)
+robotTest = Robot(500, 200, Api("http://192.168.4.1"))
 
 while True:
     for event in pygame.event.get():
