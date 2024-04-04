@@ -7,4 +7,5 @@ class Tile(Enum):
     ROBOT = 'red'
     EMPTY = 'white'
     TRACK = 'green'
+    LASTCOORDINATE = 'ORANGE'
 
