@@ -6,9 +6,9 @@ class Robot:
     __coordinates: [Coordinate]
     __api: Api
 
-    def __init__(self, x: int, y: int, api: Api):
+    def __init__(self, api: Api):
         self.__coordinates = []
-        self.__coordinates.append(Coordinate(x, y))
+        #self.__coordinates.append(Coordinate(x, y))
         self.__api = api
 
     def getCoordinate(self) -> Coordinate:
@@ -26,5 +26,5 @@ class Robot:
         coordinates = self.__api.receive("")
         self.addCoordinate(coordinates['x'], coordinates['y'])
 
-    def addCoordinate(self, x: int, y: int):
-        self.__coordinates.append(Coordinate(x, y))
+    #def addCoordinate(self, x: int, y: int):
+     #   self.__coordinates.append(Coordinate(x, y))

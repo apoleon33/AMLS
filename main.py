@@ -1,4 +1,5 @@
 import pygame
+import time
 
 from Robot.api import Api
 from Robot.robot import Robot
@@ -6,10 +7,8 @@ from Display.screen import Screen
 from Display.tile import Tile
 
 screen1 = Screen(800, 600, "Robot Cartographer")
-robotTest = Robot(2, 580, Api("http://192.168.4.1"))
-Robot.addCoordinate(robotTest, 2, 500) #on ajoute des nouvelles coordonnées manuellement
-Robot.addCoordinate(robotTest, 2, 400) #on ajoute des nouvelles coordonnées manuellement
-Robot.addCoordinate(robotTest, 2, 300) #on ajoute des nouvelles coordonnées manuellement
+robotTest = Robot(Api("http://192.168.4.1"))
+
 
 #robotTest.updateCoordinate()a
 
@@ -18,6 +17,10 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
+
+    time.sleep(0.5)
+    robotTest.updateCoordinate()
+    time.sleep(0.5)
 
 
     screen1.screen.fill(Tile.EMPTY.value)  # Remplir l'écran avec la couleur de la tuile VIDE
