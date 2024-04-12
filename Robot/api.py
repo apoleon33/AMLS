@@ -1,4 +1,5 @@
 import requests
+from requests.exceptions import ConnectTimeout
 
 
 class Api:
@@ -32,12 +33,16 @@ class Api:
             response : dict
                 the response from the API, empty if no connection was established
                 """
-        print(f"essai de connexion à {self.__url + subdomain}...")
+
+        fullUrl = self.__url + subdomain
+        print(f"Essai de connexion à {fullUrl}...")
+
         try:
-            response = requests.get(self.__url + subdomain, timeout=5)
-        except:
-            print("Erreur de connexion")
+            response = requests.get(fullUrl, timeout=5)
+        except ConnectTimeout:
+            print(f"La connexion à {fullUrl} a échouée")
             return {"success": False}
+        print(f"connecté à {fullUrl} avec succès!")
 
         response = response.json()
         response["success"] = True
